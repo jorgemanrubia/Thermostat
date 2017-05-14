@@ -9,7 +9,7 @@
 import Cocoa
 
 class ViewController: NSViewController {
-    var temperature = 68
+    dynamic var temperature = 68
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,14 @@ class ViewController: NSViewController {
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func makeWarmer(_ sender: Any) {
+        temperature += 1
+    }
+    
+    @IBAction func makeCooler(_ sender: Any) {
+        temperature -= 1
+    }
+    
     override var representedObject: Any? {
         didSet {
         // Update the view, if already loaded.
