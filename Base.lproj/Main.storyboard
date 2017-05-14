@@ -683,7 +683,7 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="Thermostat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="437" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <slider horizontalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1g-LN-noA">
@@ -691,6 +691,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <sliderCell key="cell" alignment="left" maxValue="100" doubleValue="50" tickMarkPosition="right" sliderType="linear" id="rBv-V2-T88"/>
                                 <connections>
+                                    <binding destination="XfG-lQ-9wD" name="enabled" keyPath="isOn" id="83w-hE-vdr"/>
                                     <binding destination="XfG-lQ-9wD" name="value" keyPath="temperature" id="bq6-JR-GON"/>
                                 </connections>
                             </slider>
@@ -715,6 +716,7 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="makeWarmer:" target="XfG-lQ-9wD" id="zOM-vi-K8H"/>
+                                    <binding destination="XfG-lQ-9wD" name="enabled" keyPath="isOn" id="6i0-Pq-gMU"/>
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GiI-tL-VnV">
@@ -726,6 +728,18 @@
                                 </buttonCell>
                                 <connections>
                                     <action selector="makeCooler:" target="XfG-lQ-9wD" id="HfS-fb-jza"/>
+                                    <binding destination="XfG-lQ-9wD" name="enabled" keyPath="isOn" id="kPz-he-Ox7"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d3N-Jg-onE">
+                                <rect key="frame" x="301" y="19" width="52" height="19"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="recessed" title="Power" bezelStyle="recessed" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="52i-Xb-ofn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES" changeBackground="YES" changeGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <binding destination="XfG-lQ-9wD" name="value" keyPath="isOn" id="LqS-rc-NLU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -734,7 +748,7 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <userDefaultsController representsSharedInstance="YES" id="5OG-Kd-ZkZ"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="10.5" y="655"/>
         </scene>
     </scenes>
 </document>

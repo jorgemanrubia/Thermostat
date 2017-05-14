@@ -10,6 +10,7 @@ import Cocoa
 
 class ViewController: NSViewController {
     dynamic var temperature = 68
+    dynamic var isOn = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
